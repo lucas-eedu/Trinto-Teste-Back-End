@@ -1,0 +1,26 @@
+{
+  "name": "teste-trinto-api-rest",
+  "version": "1.0.0",
+  "description": "Teste para back-end no squad UOLEdTech.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucas-eedu/Trinto-Teste-Back-End.git"
+  },
+  "author": "Lucas Eduardo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucas-eedu/Trinto-Teste-Back-End/issues"
+  },
+  "homepage": "https://github.com/lucas-eedu/Trinto-Teste-Back-End#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "dotenv": "^11.0.0",
+    "express": "^4.17.2",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.13.0"
+  }
+}
