@@ -14,7 +14,7 @@ router.get('/seller', async (req, res) => {
 
 router.post('/seller', async (req, res) => {
    try {
-      const name = req.body.name;
+      const { name } = req.body;
       const createSeller = await Seller.create({
          name
       });
@@ -31,8 +31,8 @@ router.post('/seller', async (req, res) => {
 
 router.put('/seller/:id', async (req, res) => {
    try {
-      const id = req.params.id;
-      const name = req.body.name;
+      const { id } = req.params;
+      const { name } = req.body;
       const findSellerId = await Seller.findByPk(id);
 
       if (findSellerId) {
@@ -58,7 +58,7 @@ router.put('/seller/:id', async (req, res) => {
 
 router.delete('/seller/:id', async (req, res) => {
    try {
-      const id = req.params.id;
+      const { id } = req.params;
       const deleteSeller = await Seller.destroy({
          where: {
             id: id
