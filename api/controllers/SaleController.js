@@ -3,10 +3,6 @@ const router = express.Router();
 const Sale = require('../models/Sale');
 
 // Sale Routes
-router.get('/sale/ranking', async (req, res) => {
-   res.send({message: 'ranking'});
-});
-
 router.post('/sale', async (req, res) => {
    try {
       const { value, sellerId } = req.body;
