@@ -6,6 +6,7 @@ const connection = require('./database/database');
 
 // Import Controllers
 const sellerController = require('./controllers/SellerController');
+const saleController = require('./controllers/SaleController');
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
@@ -21,5 +22,6 @@ connection
    })
 
 app.use('/api/', sellerController);
+app.use('/api/', saleController);
 
 module.exports = app;
