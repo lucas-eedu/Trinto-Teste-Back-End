@@ -30,28 +30,24 @@ router.post('/seller', async (req, res) => {
 });
 
 router.put('/seller/:id', async (req, res) => {
-   try {
-      const { id } = req.params;
-      const { name } = req.body;
-      const findSellerId = await Seller.findByPk(id);
+   const { id } = req.params;
+   const { name } = req.body;
+   const findSellerId = await Seller.findByPk(id);
 
-      if (findSellerId) {
-         const updateSeller = await Seller.update({name: name}, {
-            where: {
-               id: id
-            }
-         });
-         res.status(200).send({
-            message: 'Vendedor atualizado com sucesso.'
-         });
-      } else {
-         res.status(404).send({
-            message: 'ID não encontrado.'
-         });
-      }
-   } catch (err) {
-      res.status(400).send({
-         message: 'Falha ao atualizar o vendedor.'
+   if (findSellerId) {
+      await Seller.update({name: name}, {
+         where: {
+            id: id
+         }
+      });
+      const seller = await Seller.findByPk(id);
+      res.status(200).send({
+         seller,
+         message: 'Vendedor atualizado com sucesso.'
+      });
+   } else {
+      res.status(404).send({
+         message: 'ID não encontrado.'
       });
    }
 });

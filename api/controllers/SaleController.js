@@ -16,7 +16,7 @@ router.post('/sale', async (req, res) => {
       });
    } catch (err) {
       res.status(400).send({
-         message: 'Falha ao realizar a venda.',
+         message: 'Falha ao criar a venda.',
          err
       });
    }
