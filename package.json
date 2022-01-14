@@ -4,7 +4,8 @@
   "description": "Teste para back-end no squad UOLEdTech.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -17,10 +18,15 @@
   },
   "homepage": "https://github.com/lucas-eedu/Trinto-Teste-Back-End#readme",
   "dependencies": {
-    "body-parser": "^1.19.1",
     "dotenv": "^11.0.0",
     "express": "^4.17.2",
     "mysql2": "^2.3.3",
     "sequelize": "^6.13.0"
+  },
+  "devDependencies": {
+    "faker": "^6.6.6",
+    "faker-br": "^0.4.1",
+    "jest": "^27.4.7",
+    "supertest": "^6.2.1"
   }
 }
